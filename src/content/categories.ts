@@ -1,0 +1,77 @@
+import { Category } from "@/types";
+
+export const categories: Category[] = [
+  {
+    id: "deals",
+    slug: "deals",
+    name: { en: "Deals", ur: "ڈیلز" },
+    shortDescription: { en: "Special offers and combo meals" },
+    sortOrder: 0,
+    active: true,
+  },
+  {
+    id: "pizza",
+    slug: "pizza",
+    name: { en: "Pizza", ur: "پزا" },
+    shortDescription: { en: "Delicious freshly baked pizzas" },
+    sortOrder: 1,
+    active: true,
+  },
+  {
+    id: "burgers",
+    slug: "burgers",
+    name: { en: "Burgers", ur: "برگرز" },
+    shortDescription: { en: "Juicy burgers" },
+    sortOrder: 2,
+    active: true,
+  },
+  {
+    id: "chicken",
+    slug: "chicken",
+    name: { en: "Chicken Broast & Roast", ur: "چکن بروسٹ اور روسٹ" },
+    sortOrder: 3,
+    active: true,
+  },
+  {
+    id: "pulao",
+    slug: "pulao",
+    name: { en: "Chicken Pulao", ur: "چکن پلاؤ" },
+    sortOrder: 4,
+    active: true,
+  },
+  {
+    id: "rolls-shawarma",
+    slug: "rolls-shawarma",
+    name: { en: "Rolls & Shawarma", ur: "رول اور شوارما" },
+    sortOrder: 5,
+    active: true,
+  },
+  {
+    id: "sandwiches",
+    slug: "sandwiches",
+    name: { en: "Sandwiches", ur: "سینڈوچز" },
+    sortOrder: 6,
+    active: true,
+  },
+  {
+    id: "sides",
+    slug: "sides",
+    name: { en: "Sides & Extras", ur: "سائیڈز" },
+    sortOrder: 7,
+    active: true,
+  },
+  {
+    id: "drinks",
+    slug: "drinks",
+    name: { en: "Delicious Bar & Drinks", ur: "مشروبات" },
+    sortOrder: 8,
+    active: true,
+  },
+  {
+    id: "desserts",
+    slug: "desserts",
+    name: { en: "Sweets & Ice Cream", ur: "مٹھائیاں اور آئس کریم" },
+    sortOrder: 9,
+    active: true,
+  },
+];
