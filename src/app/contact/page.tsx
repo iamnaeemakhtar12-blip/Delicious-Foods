@@ -1,11 +1,8 @@
+"use client"
+
 import { SectionHeading } from "@/components/ui/section-heading"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react"
-
-export const metadata = {
-  title: "Contact Us",
-  description: "Get in touch with Delicious Foods. Find our location in Wah Cantt, opening hours, and contact information.",
-}
 
 export default function ContactPage() {
   return (
