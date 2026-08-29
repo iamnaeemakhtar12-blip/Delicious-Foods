@@ -66,11 +66,13 @@ export default function ContactPage() {
               
               <div className="mt-12">
                 <Button 
+                  asChild
                   className="w-full sm:w-auto rounded-full font-bold px-8 bg-green-500 hover:bg-green-600 text-white flex items-center space-x-2"
-                  onClick={() => window.open('https://wa.me/923000000000', '_blank')}
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Chat on WhatsApp</span>
+                  <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Chat on WhatsApp</span>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -78,7 +80,7 @@ export default function ContactPage() {
             {/* Right Side: Form */}
             <div className="p-10 md:p-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                   <input 
@@ -106,7 +108,7 @@ export default function ContactPage() {
                     placeholder="How can we help you?"
                   ></textarea>
                 </div>
-                <Button type="submit" className="w-full rounded-xl font-bold py-6 text-lg">
+                <Button type="button" className="w-full rounded-xl font-bold py-6 text-lg">
                   Send Message
                 </Button>
               </form>
