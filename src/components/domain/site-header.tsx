@@ -36,7 +36,7 @@ export function SiteHeader() {
                 height={50} 
                 className="w-12 h-12 rounded-full object-cover"
               />
-              <span className="font-bold font-[family-name:var(--font-display)] text-2xl tracking-tight text-[var(--color-brand-primary)]">
+              <span className="font-bold font-[family-name:var(--font-display)] text-xl sm:text-2xl tracking-tight text-[var(--color-brand-primary)]">
                 Delicious Foods
               </span>
             </Link>
@@ -93,7 +93,7 @@ export function SiteHeader() {
       
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t border-[var(--color-surface-border)] bg-white">
+        <div className="lg:hidden border-t border-[var(--color-surface-border)] bg-white max-h-[calc(100vh-4rem)] overflow-y-auto">
           <nav className="flex flex-col py-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))

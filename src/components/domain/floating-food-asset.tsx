@@ -67,8 +67,8 @@ export function FloatingFoodAsset({
         y: (parallaxValueY && !shouldReduceMotion) ? parallaxY : 0,
         rotate: rotation,
         filter: blur ? "blur(4px)" : "none",
-        width,
-        height,
+        width: `min(${width}px, 90vw)`,
+        height: `min(${height}px, calc(90vw * ${height / width}))`,
         willChange: "transform"
       }}
       initial={{ opacity: 0, scale: 0.8 }}

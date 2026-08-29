@@ -49,7 +49,7 @@ export function HeroSection() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-[family-name:var(--font-display)] leading-[1.05] tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-[family-name:var(--font-display)] leading-[1.05] tracking-tight"
             >
               Delicious <br />
               <span className="text-[var(--color-brand-secondary)] drop-shadow-md">Foods</span>
@@ -62,12 +62,12 @@ export function HeroSection() {
               {restaurant.description?.en || "Whatever you're craving, we've got it."} From our signature Zinger to our special Chicken Pulao.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="pt-6 flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-full font-bold text-lg px-8 bg-[var(--color-brand-secondary)] text-[var(--color-text-on-yellow)] hover:bg-[var(--color-brand-secondary-hover)] shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] transition-all border-none">
-                <a href="#menu">View Menu</a>
+            <motion.div variants={itemVariants} className="pt-6 flex flex-col sm:flex-row gap-4 w-full">
+              <Button size="lg" className="rounded-full font-bold text-lg px-8 bg-[var(--color-brand-secondary)] text-[var(--color-text-on-yellow)] hover:bg-[var(--color-brand-secondary-hover)] shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] transition-all border-none w-full sm:w-auto">
+                <a href="#menu" className="w-full">View Menu</a>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full font-bold text-lg px-8 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                <a href={`tel:${restaurant.phone.e164}`}>Order Now</a>
+              <Button size="lg" variant="outline" className="rounded-full font-bold text-lg px-8 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm w-full sm:w-auto">
+                <a href={`tel:${restaurant.phone.e164}`} className="w-full">Order Now</a>
               </Button>
             </motion.div>
           </motion.div>

@@ -38,7 +38,7 @@ export function HeroFoodComposition() {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] flex justify-center items-center pointer-events-auto"
+      className="relative w-full h-[320px] sm:h-[450px] lg:h-[600px] flex justify-center items-center pointer-events-auto"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
