@@ -185,3 +185,7 @@ export const products: Product[] = [
     verification: { status: "verified", source: "printed-menu" }
   }
 ];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((product) => product.slug === slug);
+}

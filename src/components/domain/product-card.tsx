@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Product } from "@/types"
 import { cn } from "@/lib/utils"
 import { Price } from "@/components/ui/price"
@@ -10,26 +11,30 @@ import { toast } from "sonner"
 import { useCartStore } from "@/store/cart"
 import { Heart } from "lucide-react"
 
-export interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ProductCardProps {
   product: Product
   priority?: boolean
+  className?: string
 }
 
-export function ProductCard({ product, priority = false, className, ...props }: ProductCardProps) {
+export function ProductCard({ product, priority = false, className }: ProductCardProps) {
   const primaryImage = product.images?.[0]
   const { addItem } = useCartStore()
   
   return (
-    <div 
+    <Link
+      href={`/product/${product.slug}`}
       className={cn(
         "group flex flex-col rounded-2xl sm:rounded-3xl bg-white overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full",
         className
       )}
-      {...props}
     >
       <div className="relative aspect-square sm:aspect-video w-full overflow-hidden bg-gray-100">
         <div className="absolute top-2 right-2 z-10">
-          <button className="bg-[#54064F] text-white p-1.5 sm:p-2 rounded-full shadow-sm hover:bg-[#741066] transition-colors">
+          <button 
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+            className="bg-[#54064F] text-white p-1.5 sm:p-2 rounded-full shadow-sm hover:bg-[#741066] transition-colors"
+          >
             <Heart className="w-3 h-3 sm:w-4 sm:h-4" />
           </button>
         </div>
@@ -66,7 +71,9 @@ export function ProductCard({ product, priority = false, className, ...props }: 
           <Button 
             size="sm" 
             className="rounded-full font-bold px-2 sm:px-5 text-[10px] sm:text-sm h-7 sm:h-10 w-full bg-[#54064F] hover:bg-[#741066] text-white"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
               if (product.basePrice) {
                 addItem({
                   productId: product.id,
@@ -83,6 +90,6 @@ export function ProductCard({ product, priority = false, className, ...props }: 
           </Button>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
