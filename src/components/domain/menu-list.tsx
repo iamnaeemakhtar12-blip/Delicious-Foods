@@ -47,7 +47,7 @@ export function MenuList() {
                 transition={{ delay: index * 0.03 }}
                 className="h-full"
               >
-                <ProductCard product={product} />
+                <ProductCard product={product} priority={index < 6} />
               </motion.div>
             ))}
           </motion.div>

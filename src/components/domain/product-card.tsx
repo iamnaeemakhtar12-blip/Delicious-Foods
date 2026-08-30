@@ -12,9 +12,10 @@ import { Heart } from "lucide-react"
 
 export interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
   product: Product
+  priority?: boolean
 }
 
-export function ProductCard({ product, className, ...props }: ProductCardProps) {
+export function ProductCard({ product, priority = false, className, ...props }: ProductCardProps) {
   const primaryImage = product.images?.[0]
   const { addItem } = useCartStore()
   
@@ -39,6 +40,7 @@ export function ProductCard({ product, className, ...props }: ProductCardProps) 
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 33vw, (max-width: 1200px) 50vw, 33vw"
+            priority={priority}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400 text-xs sm:text-base">

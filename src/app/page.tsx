@@ -51,8 +51,8 @@ export default function Home() {
           </SectionHeading>
           
           <div className="grid grid-cols-3 lg:grid-cols-2 gap-2 sm:gap-6 mt-8 sm:mt-12">
-            {deals.map(deal => (
-              <DealCard key={deal.id} deal={deal} />
+            {deals.map((deal, index) => (
+              <DealCard key={deal.id} deal={deal} priority={index < 2} />
             ))}
           </div>
         </div>

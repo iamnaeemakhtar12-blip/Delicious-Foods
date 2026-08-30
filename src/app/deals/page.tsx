@@ -43,10 +43,10 @@ export default function DealsPage() {
               key={deal.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="h-full"
             >
-              <DealCard deal={deal} />
+              <DealCard deal={deal} priority={index < 4} />
             </motion.div>
           ))}
         </div>

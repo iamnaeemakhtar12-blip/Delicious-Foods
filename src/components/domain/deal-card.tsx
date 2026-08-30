@@ -12,9 +12,10 @@ import { useCartStore } from "@/store/cart"
 
 export interface DealCardProps extends React.HTMLAttributes<HTMLDivElement> {
   deal: Deal
+  priority?: boolean
 }
 
-export function DealCard({ deal, className, ...props }: DealCardProps) {
+export function DealCard({ deal, priority = false, className, ...props }: DealCardProps) {
   const primaryImage = deal.image
   const { addItem } = useCartStore()
   
@@ -33,7 +34,8 @@ export function DealCard({ deal, className, ...props }: DealCardProps) {
             alt={primaryImage.alt.en}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 640px) 33vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={priority}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-[#FFE8A1]/30 text-[var(--color-brand-secondary)] font-bold font-display text-xs sm:text-xl">
