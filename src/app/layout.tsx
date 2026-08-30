@@ -59,7 +59,7 @@ export default function RootLayout({
         <SiteFooter />
         <FloatingCart />
         <CartSheet />
-        <Toaster position="bottom-right" />
+        <Toaster position="top-center" duration={2000} />
       </body>
     </html>
   );
