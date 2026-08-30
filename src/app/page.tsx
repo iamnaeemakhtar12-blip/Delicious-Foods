@@ -15,29 +15,29 @@ export default function Home() {
       <HeroSection />
 
       {/* Trust Badges */}
-      <section className="py-12 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="flex flex-col items-center justify-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
-              <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4">
-                <Leaf className="w-8 h-8" />
+      <section className="py-6 sm:py-12 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 gap-2 sm:gap-8 text-center">
+            <div className="flex flex-col items-center justify-center p-2 sm:p-6 rounded-xl sm:rounded-2xl hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 sm:w-16 sm:h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-1.5 sm:mb-4">
+                <Leaf className="w-5 h-5 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="font-bold text-xl mb-2 text-gray-900">Fresh Ingredients</h3>
-              <p className="text-gray-600">We source the freshest local ingredients daily in Wah Cantt to ensure premium quality in every bite.</p>
+              <h3 className="font-bold text-xs sm:text-xl mb-1 sm:mb-2 text-gray-900 leading-tight">Fresh Ingredients</h3>
+              <p className="hidden sm:block text-gray-600 text-sm">We source the freshest local ingredients daily in Wah Cantt to ensure premium quality in every bite.</p>
             </div>
-            <div className="flex flex-col items-center justify-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
-              <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4">
-                <Clock className="w-8 h-8" />
+            <div className="flex flex-col items-center justify-center p-2 sm:p-6 rounded-xl sm:rounded-2xl hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 sm:w-16 sm:h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-1.5 sm:mb-4">
+                <Clock className="w-5 h-5 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="font-bold text-xl mb-2 text-gray-900">Fast Delivery</h3>
-              <p className="text-gray-600">Hot and fresh, straight to your door. We pride ourselves on the fastest delivery times across all sectors.</p>
+              <h3 className="font-bold text-xs sm:text-xl mb-1 sm:mb-2 text-gray-900 leading-tight">Fast Delivery</h3>
+              <p className="hidden sm:block text-gray-600 text-sm">Hot and fresh, straight to your door. We pride ourselves on the fastest delivery times across all sectors.</p>
             </div>
-            <div className="flex flex-col items-center justify-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
-              <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4">
-                <ShieldCheck className="w-8 h-8" />
+            <div className="flex flex-col items-center justify-center p-2 sm:p-6 rounded-xl sm:rounded-2xl hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 sm:w-16 sm:h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-1.5 sm:mb-4">
+                <ShieldCheck className="w-5 h-5 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="font-bold text-xl mb-2 text-gray-900">100% Halal</h3>
-              <p className="text-gray-600">All our meats and ingredients are certified 100% Halal, prepared in a perfectly clean environment.</p>
+              <h3 className="font-bold text-xs sm:text-xl mb-1 sm:mb-2 text-gray-900 leading-tight">100% Halal</h3>
+              <p className="hidden sm:block text-gray-600 text-sm">All our meats and ingredients are certified 100% Halal, prepared in a perfectly clean environment.</p>
             </div>
           </div>
         </div>
