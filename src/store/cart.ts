@@ -28,12 +28,11 @@ export const useCartStore = create<CartStore>()(
           if (existingItemIndex >= 0) {
             const newItems = [...state.items]
             newItems[existingItemIndex].quantity += item.quantity
-            return { items: newItems, isOpen: true }
+            return { items: newItems }
           }
           
           return { 
-            items: [...state.items, { ...item, id: `${item.productId}-${Date.now()}` }],
-            isOpen: true
+            items: [...state.items, { ...item, id: `${item.productId}-${Date.now()}` }]
           }
         })
       },

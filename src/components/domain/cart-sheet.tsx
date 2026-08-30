@@ -40,13 +40,13 @@ export function CartSheet() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-white z-[101] shadow-2xl flex flex-col"
+            className="fixed top-0 right-0 h-full w-[85vw] sm:w-[350px] bg-white z-[101] shadow-2xl flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-100">
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-gray-100">
               <div className="flex items-center space-x-3">
-                <ShoppingCart className="w-6 h-6 text-orange-500" />
-                <h2 className="text-xl font-bold font-display text-gray-900">Your Cart</h2>
+                <ShoppingCart className="w-5 h-5 text-orange-500" />
+                <h2 className="text-lg sm:text-xl font-bold font-display text-gray-900">Your Cart</h2>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
@@ -57,7 +57,7 @@ export function CartSheet() {
             </div>
 
             {/* Items */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center space-y-4">
                   <div className="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-4">
