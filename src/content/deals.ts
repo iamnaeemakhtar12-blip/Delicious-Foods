@@ -169,7 +169,7 @@ export const deals: Deal[] = [
     ],
     price: { amount: 2800, currency: "PKR" },
     image: {
-      src: "https://images.unsplash.com/photo-1605050965352-7a0e7aebbc9b?w=800&q=80&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80&auto=format&fit=crop",
       alt: { en: "Family Deal" },
       width: 800,
       height: 600,

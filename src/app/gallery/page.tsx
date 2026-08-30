@@ -8,12 +8,12 @@ export const metadata = {
 const galleryImages = [
   "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80&auto=format&fit=crop", // Pizza
   "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80&auto=format&fit=crop", // Burger
-  "https://images.unsplash.com/photo-1569058242253-11f8b4ed70d8?w=800&q=80&auto=format&fit=crop", // Broast
+  "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=800&q=80&auto=format&fit=crop", // Broast
   "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80&auto=format&fit=crop", // Pizza slice
   "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80&auto=format&fit=crop", // Zinger
   "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=800&q=80&auto=format&fit=crop", // Pulao
   "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80&auto=format&fit=crop", // Shawarma
-  "https://images.unsplash.com/photo-1573081467611-82cd2e431f13?w=800&q=80&auto=format&fit=crop", // Fries
+  "https://images.unsplash.com/photo-1576107232684-1279f390859f?w=800&q=80&auto=format&fit=crop", // Fries
   "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&q=80&auto=format&fit=crop", // Drink
 ]
 
