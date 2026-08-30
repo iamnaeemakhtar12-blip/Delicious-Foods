@@ -8,6 +8,7 @@ import { Price } from "@/components/ui/price"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import { useCartStore } from "@/store/cart"
+import { Heart } from "lucide-react"
 
 export interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
   product: Product
@@ -20,12 +21,17 @@ export function ProductCard({ product, className, ...props }: ProductCardProps) 
   return (
     <div 
       className={cn(
-        "group flex flex-col rounded-xl sm:rounded-2xl bg-white overflow-hidden border border-[var(--color-surface-border)] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full",
+        "group flex flex-col rounded-2xl sm:rounded-3xl bg-white overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full",
         className
       )}
       {...props}
     >
       <div className="relative aspect-square sm:aspect-video w-full overflow-hidden bg-gray-100">
+        <div className="absolute top-2 right-2 z-10">
+          <button className="bg-[#54064F] text-white p-1.5 sm:p-2 rounded-full shadow-sm hover:bg-[#741066] transition-colors">
+            <Heart className="w-3 h-3 sm:w-4 sm:h-4" />
+          </button>
+        </div>
         {primaryImage ? (
           <Image
             src={primaryImage.src}
@@ -42,25 +48,22 @@ export function ProductCard({ product, className, ...props }: ProductCardProps) 
       </div>
       
       <div className="flex flex-col flex-1 p-2 sm:p-4">
-        <h3 className="font-bold text-xs sm:text-lg mb-0.5 sm:mb-1 text-[var(--color-text-primary)] line-clamp-1 sm:line-clamp-2 leading-tight">
+        <h3 className="font-bold text-[11px] sm:text-lg mb-1 sm:mb-2 text-gray-900 line-clamp-2 leading-tight">
           {product.name.en}
         </h3>
-        {product.description?.en && (
-          <p className="text-[10px] sm:text-sm text-[var(--color-text-secondary)] line-clamp-1 sm:line-clamp-2 mb-2 sm:mb-4 hidden sm:block">
-            {product.description.en}
-          </p>
-        )}
         
-        <div className="mt-auto pt-1 sm:pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
+        <div className="mt-1 sm:mt-2 mb-2 sm:mb-4">
           {product.basePrice ? (
-            <Price price={product.basePrice} size="sm" className="text-xs sm:text-base font-bold" />
+            <Price price={product.basePrice} size="sm" className="text-[13px] sm:text-base font-bold text-[#54064F]" />
           ) : (
             <span className="text-[10px] sm:text-sm font-medium text-gray-500">Contact</span>
           )}
-          
+        </div>
+        
+        <div className="mt-auto">
           <Button 
             size="sm" 
-            className="rounded-full font-bold px-2 sm:px-5 text-[10px] sm:text-sm h-6 sm:h-9 w-full sm:w-auto"
+            className="rounded-full font-bold px-2 sm:px-5 text-[10px] sm:text-sm h-7 sm:h-10 w-full bg-[#54064F] hover:bg-[#741066] text-white"
             onClick={() => {
               if (product.basePrice) {
                 addItem({
@@ -74,7 +77,7 @@ export function ProductCard({ product, className, ...props }: ProductCardProps) 
               }
             }}
           >
-            Add
+            + Add
           </Button>
         </div>
       </div>

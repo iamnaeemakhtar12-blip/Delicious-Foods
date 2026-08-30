@@ -30,10 +30,10 @@ export function FloatingCart() {
         <Button 
           size="lg" 
           onClick={toggleCart}
-          className="relative h-16 rounded-full px-6 shadow-2xl bg-[var(--color-brand-primary)] text-white hover:scale-105 hover:bg-[var(--color-brand-primary)] transition-transform duration-300"
+          className="relative h-12 sm:h-16 rounded-full px-5 sm:px-6 shadow-2xl bg-[#54064F] text-white hover:scale-105 hover:bg-[#741066] transition-transform duration-300 border-2 border-white shadow-[0_4px_20px_rgba(84,6,79,0.3)]"
         >
-          <ShoppingCart className="w-6 h-6 mr-2" />
-          <span className="font-bold text-lg">View Cart</span>
+          <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
+          <span className="font-bold text-sm sm:text-lg">View Cart</span>
           
           <AnimatePresence mode="popLayout">
             {count > 0 && (
@@ -42,7 +42,7 @@ export function FloatingCart() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
-                className="absolute -top-2 -right-2 w-7 h-7 bg-[var(--color-brand-secondary)] text-[var(--color-text-on-yellow)] rounded-full flex items-center justify-center text-sm font-bold shadow-md"
+                className="absolute -top-1.5 -right-1.5 w-6 h-6 bg-white text-gray-900 border border-gray-200 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold shadow-sm"
               >
                 {count}
               </motion.span>
