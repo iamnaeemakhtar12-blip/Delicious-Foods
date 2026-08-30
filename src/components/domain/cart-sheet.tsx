@@ -7,8 +7,10 @@ import { useCartStore } from "@/store/cart"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export function CartSheet() {
+  const router = useRouter()
   const { isOpen, setIsOpen, items, updateQuantity, removeItem, totalPrice } = useCartStore()
 
   // Prevent scrolling when cart is open
@@ -146,11 +148,17 @@ export function CartSheet() {
                   </div>
                 </div>
                 
-                <Link href="/checkout" onClick={() => setIsOpen(false)} className="w-full block">
-                  <Button className="w-full py-6 text-lg rounded-full font-bold bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/20">
-                    Proceed to Checkout
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => {
+                    document.body.style.overflow = 'unset';
+                    setIsOpen(false);
+                    router.push('/checkout');
+                    setTimeout(() => window.scrollTo(0, 0), 100);
+                  }}
+                  className="w-full py-6 text-lg rounded-full font-bold bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/20"
+                >
+                  Proceed to Checkout
+                </Button>
               </div>
             )}
           </motion.div>

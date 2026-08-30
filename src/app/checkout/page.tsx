@@ -25,7 +25,10 @@ export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCartStore()
   
   const [mounted, setMounted] = React.useState(false)
-  React.useEffect(() => { setMounted(true) }, [])
+  React.useEffect(() => { 
+    setMounted(true)
+    window.scrollTo(0, 0)
+  }, [])
 
   const {
     register,
