@@ -36,28 +36,28 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           <motion.div
-            className="max-w-2xl space-y-6 pt-8 md:pt-0"
+            className="max-w-2xl space-y-4 sm:space-y-6 pt-4 sm:pt-8 md:pt-0 text-center sm:text-left flex flex-col items-center sm:items-start"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             <motion.div variants={itemVariants}>
-              <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[var(--color-brand-secondary)] text-sm font-bold tracking-wide uppercase shadow-lg">
+              <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[var(--color-brand-secondary)] text-xs sm:text-sm font-bold tracking-wide uppercase shadow-lg">
                 Wah Cantt's Favorite
               </span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-[family-name:var(--font-display)] leading-[1.05] tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black font-[family-name:var(--font-display)] leading-[1.1] sm:leading-[1.05] tracking-tight"
             >
-              Delicious <br />
+              Delicious <br className="hidden xs:block" />
               <span className="text-[var(--color-brand-secondary)] drop-shadow-md">Foods</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-white/80 max-w-lg font-medium leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-white/80 max-w-lg font-medium leading-relaxed"
             >
               {restaurant.description?.en || "Whatever you're craving, we've got it."} From our signature Zinger to our special Chicken Pulao.
             </motion.p>

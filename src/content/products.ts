@@ -664,7 +664,7 @@ export const products: Product[] = [
     name: { en: "Mexican Cheese Sandwich" },
     description: { en: "Grilled sandwich layered with spicy Mexican sauce, chicken, and melted cheese." },
     categoryIds: ["sandwiches"],
-    images: [{ src: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80&auto=format&fit=crop", alt: { en: "Mexican Cheese Sandwich" }, width: 800, height: 600, placeholder: true }],
+    images: [{ src: "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=800&q=80&auto=format&fit=crop", alt: { en: "Mexican Cheese Sandwich" }, width: 800, height: 600, placeholder: true }],
     basePrice: { amount: 700, currency: "PKR" },
     available: true,
     featured: true,

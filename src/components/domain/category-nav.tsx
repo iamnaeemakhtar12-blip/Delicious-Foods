@@ -31,36 +31,43 @@ export function CategoryNav({ activeCategoryId, onSelectCategory, className, ...
   const currentActive = activeCategoryId || "all"
 
   return (
-    <div className={cn("w-full overflow-x-auto no-scrollbar py-2", className)} {...props}>
-      <ul className="flex flex-nowrap items-center gap-3 px-4 md:px-0">
-        {allCategories.map((category) => {
-          const isActive = currentActive === category.id
-          
-          return (
-            <li key={category.id} className="relative">
-              <button
-                onClick={() => onSelectCategory?.(category.id)}
-                className={cn(
-                  "relative z-10 whitespace-nowrap px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold transition-all shadow-sm flex items-center text-xs sm:text-sm",
-                  isActive
-                    ? "text-white border-transparent"
-                    : "bg-white text-gray-800 hover:bg-gray-50 border border-gray-100"
-                )}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="activeCategory"
-                    className="absolute inset-0 bg-[#54064F] rounded-full -z-10 shadow-sm"
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  />
-                )}
-                {getCategoryIcon(category.id, isActive)}
-                {category.name.en}
-              </button>
-            </li>
-          )
-        })}
-      </ul>
+    <div className={cn("relative w-full group", className)} {...props}>
+      {/* Right gradient scroll affordance mask */}
+      <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-12 bg-gradient-to-l from-[#FAFAFA] to-transparent pointer-events-none z-20" />
+      {/* Left gradient scroll affordance mask */}
+      <div className="absolute left-0 top-0 bottom-0 w-4 sm:w-8 bg-gradient-to-r from-[#FAFAFA] to-transparent pointer-events-none z-20" />
+
+      <div className="w-full overflow-x-auto no-scrollbar py-2 px-2 sm:px-0">
+        <ul className="flex flex-nowrap items-center gap-2 sm:gap-3 px-2 sm:px-4 md:px-0">
+          {allCategories.map((category) => {
+            const isActive = currentActive === category.id
+            
+            return (
+              <li key={category.id} className="relative flex-shrink-0">
+                <button
+                  onClick={() => onSelectCategory?.(category.id)}
+                  className={cn(
+                    "relative z-10 whitespace-nowrap px-4 py-2.5 sm:px-6 sm:py-2.5 rounded-full font-bold transition-all shadow-xs flex items-center text-xs sm:text-sm min-h-[40px] sm:min-h-[44px]",
+                    isActive
+                      ? "text-white border-transparent"
+                      : "bg-white text-gray-800 hover:bg-gray-50 border border-gray-200/80 hover:border-gray-300"
+                  )}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeCategoryPill"
+                      className="absolute inset-0 bg-[#54064F] rounded-full -z-10 shadow-sm"
+                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                    />
+                  )}
+                  {getCategoryIcon(category.id, isActive)}
+                  {category.name.en}
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </div>
   )
 }
