@@ -1,10 +1,31 @@
+"use client"
+
 import * as React from "react"
+import { usePathname } from "next/navigation"
 import { restaurant } from "@/content/restaurant"
 import { Phone, MapPin, Clock } from "lucide-react"
 import Image from "next/image"
 
 export function SiteFooter() {
+  const pathname = usePathname()
   const currentYear = new Date().getFullYear()
+
+  // Minimal footer for checkout page only
+  if (pathname === "/checkout") {
+    return (
+      <footer className="bg-[var(--color-brand-deep)] text-white/80 py-6 border-t border-white/10">
+        <div className="container mx-auto px-4 text-center space-y-2 text-xs sm:text-sm">
+          <p>&copy; {currentYear} Delicious Foods Wah Cantt. All rights reserved.</p>
+          <p className="text-white/70 flex items-center justify-center gap-2">
+            <span>Need help with your order? Call support:</span>
+            <a href={`tel:${restaurant.phone.e164}`} className="text-amber-300 font-bold hover:underline">
+              {restaurant.phone.display}
+            </a>
+          </p>
+        </div>
+      </footer>
+    )
+  }
 
   return (
     <footer className="bg-[var(--color-brand-deep)] text-white/90 py-12">

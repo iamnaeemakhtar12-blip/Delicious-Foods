@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useCartStore } from "@/store/cart"
 
+import { usePathname } from "next/navigation"
+
 export function FloatingCart() {
+  const pathname = usePathname()
   const { totalItems, totalPrice, toggleCart } = useCartStore()
   
   // Need to hydration-safe render the totalItems
@@ -16,6 +19,7 @@ export function FloatingCart() {
   }, [])
   
   if (!mounted) return null;
+  if (pathname?.startsWith("/checkout")) return null;
   
   const count = totalItems();
   const price = totalPrice();
