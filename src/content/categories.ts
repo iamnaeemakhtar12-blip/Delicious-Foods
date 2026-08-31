@@ -74,4 +74,12 @@ export const categories: Category[] = [
     sortOrder: 9,
     active: true,
   },
+  {
+    id: "deig",
+    slug: "deig",
+    name: { en: "Party & Bulk Orders", ur: "دیگ / بلک آرڈرز" },
+    shortDescription: { en: "10kg Rice Pots and catering options" },
+    sortOrder: 10,
+    active: true,
+  },
 ];

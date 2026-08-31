@@ -4,7 +4,7 @@ import * as React from "react"
 import { categories } from "@/content/categories"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { LayoutGrid, Tag, Pizza, Sandwich, Drumstick, Utensils, CupSoda, IceCream } from "lucide-react"
+import { LayoutGrid, Tag, Pizza, Sandwich, Drumstick, Utensils, CupSoda, IceCream, CookingPot } from "lucide-react"
 
 export interface CategoryNavProps extends React.HTMLAttributes<HTMLDivElement> {
   activeCategoryId?: string
@@ -21,6 +21,7 @@ const getCategoryIcon = (id: string, isActive: boolean) => {
     case "chicken": return <Drumstick className={iconClass} />
     case "drinks": return <CupSoda className={iconClass} />
     case "desserts": return <IceCream className={iconClass} />
+    case "deig": return <CookingPot className={iconClass} />
     default: return <Utensils className={iconClass} />
   }
 }

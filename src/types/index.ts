@@ -100,6 +100,12 @@ export type Category = {
   seo?: SEOMetadata;
 };
 
+export type PizzaSizeOption = {
+  id: "S" | "M" | "L";
+  label: string;
+  price: Money;
+};
+
 export type Product = {
   id: ID;
   slug: string;
@@ -108,6 +114,7 @@ export type Product = {
   categoryIds: ID[];
   images: ImageAsset[];
   basePrice?: Money;
+  pizzaSizes?: PizzaSizeOption[];
   variantGroupIds?: ID[];
   addonGroupIds?: ID[];
   badges?: Array<"featured" | "deal" | "new" | "spicy">;
